@@ -7,11 +7,11 @@ export const Footer = () => {
   useEffect(() => {
     const fetchStatus = async () => {
       try {
-        const response = await fetch(`https://ip-api.com/json/`);
+        const response = await fetch(`https://api.ipgeolocation.io/v3/ipgeo?apiKey=c8e1194a21b34af7b4d72e4c3d76a084/`);
         const data = await response.json();
         
         if (data) {
-          setLocation(`${data.city}, ${data.country}`);
+          setLocation(`${data.city}, ${data.country_name}`);
         }
       } catch (error) {
         console.error("Failed to fetch location", error);
