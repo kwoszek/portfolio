@@ -11,7 +11,7 @@ export const Footer = () => {
         const data = await response.json();
         
         if (data) {
-          setLocation(`${data.city}, ${data.country_name}`);
+          setLocation(`${data.location.city}, ${data.location.country_name}`);
         }
       } catch (error) {
         console.error("Failed to fetch location", error);
